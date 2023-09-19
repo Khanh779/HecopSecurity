@@ -1,0 +1,658 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A1614946-5A28-47BA-B377-2EB7FBB1E1CB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Hecop_Security</RootNamespace>
+    <AssemblyName>Hecop_Security</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClamAV_Lib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ClamAV_Lib\ClamAV_Lib\bin\Debug\ClamAV_Lib.dll</HintPath>
+    </Reference>
+    <Reference Include="HecopUI_Winforms, Version=2.5.23.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Lib\HecopUI_winform\HecopUI_Winforms.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Core.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Test.Designer.cs">
+      <DependentUpon>Form_Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HecopManager.cs" />
+    <Compile Include="HomeUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HomeUI.Designer.cs">
+      <DependentUpon>HomeUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoadingSecurity.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LoadingSecurity.Designer.cs">
+      <DependentUpon>LoadingSecurity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NoticIcon\NTIU.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NoticIcon\NTIU.Designer.cs">
+      <DependentUpon>NTIU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScanMode\QuickScanForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScanMode\QuickScanForm.Designer.cs">
+      <DependentUpon>QuickScanForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScanUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ScanUI.Designer.cs">
+      <DependentUpon>ScanUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SecurityUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SecurityUI.Designer.cs">
+      <DependentUpon>SecurityUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Security\ProManButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Security\ProManButton.Designer.cs">
+      <DependentUpon>ProManButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SettingsUI.Designer.cs">
+      <DependentUpon>SettingsUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolsUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ToolsUI.Designer.cs">
+      <DependentUpon>ToolsUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolsUIT\LogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolsUIT\LogForm.Designer.cs">
+      <DependentUpon>LogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolsUIT\QuarantineForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolsUIT\QuarantineForm.Designer.cs">
+      <DependentUpon>QuarantineForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UpdateUI.Designer.cs">
+      <DependentUpon>UpdateUI.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Test.resx">
+      <DependentUpon>Form_Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeUI.resx">
+      <DependentUpon>HomeUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoadingSecurity.resx">
+      <DependentUpon>LoadingSecurity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ScanMode\QuickScanForm.resx">
+      <DependentUpon>QuickScanForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScanUI.resx">
+      <DependentUpon>ScanUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SecurityUI.resx">
+      <DependentUpon>SecurityUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Security\ProManButton.resx">
+      <DependentUpon>ProManButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingsUI.resx">
+      <DependentUpon>SettingsUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolsUI.resx">
+      <DependentUpon>ToolsUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolsUIT\LogForm.resx">
+      <DependentUpon>LogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolsUIT\QuarantineForm.resx">
+      <DependentUpon>QuarantineForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateUI.resx">
+      <DependentUpon>UpdateUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="x64\conf_examples\clamd.conf.sample" />
+    <None Include="x64\conf_examples\freshclam.conf.sample" />
+    <None Include="x64\COPYING\COPYING" />
+    <None Include="x64\COPYING\COPYING.bzip2" />
+    <None Include="x64\COPYING\COPYING.file" />
+    <None Include="x64\COPYING\COPYING.getopt" />
+    <None Include="x64\COPYING\COPYING.LGPL" />
+    <None Include="x64\COPYING\COPYING.llvm" />
+    <None Include="x64\COPYING\COPYING.lzma" />
+    <None Include="x64\COPYING\COPYING.pcre" />
+    <None Include="x64\COPYING\COPYING.regex" />
+    <None Include="x64\COPYING\COPYING.unrar" />
+    <None Include="x64\COPYING\COPYING.YARA" />
+    <None Include="x64\COPYING\COPYING.zlib" />
+    <None Include="x64\FontAwesome\fonts\fontawesome-webfont.eot" />
+    <None Include="x64\FontAwesome\fonts\fontawesome-webfont.ttf" />
+    <None Include="x64\FontAwesome\fonts\fontawesome-webfont.woff" />
+    <None Include="x64\FontAwesome\fonts\fontawesome-webfont.woff2" />
+    <None Include="x64\FontAwesome\fonts\FontAwesome.ttf" />
+    <None Include="x64\fonts\open-sans-v17-all-charsets-300.woff2" />
+    <None Include="x64\fonts\open-sans-v17-all-charsets-300italic.woff2" />
+    <None Include="x64\fonts\open-sans-v17-all-charsets-600.woff2" />
+    <None Include="x64\fonts\open-sans-v17-all-charsets-600italic.woff2" />
+    <None Include="x64\fonts\open-sans-v17-all-charsets-700.woff2" />
+    <None Include="x64\fonts\open-sans-v17-all-charsets-700italic.woff2" />
+    <None Include="x64\fonts\open-sans-v17-all-charsets-800.woff2" />
+    <None Include="x64\fonts\open-sans-v17-all-charsets-800italic.woff2" />
+    <None Include="x64\fonts\open-sans-v17-all-charsets-italic.woff2" />
+    <None Include="x64\fonts\open-sans-v17-all-charsets-regular.woff2" />
+    <None Include="x64\fonts\source-code-pro-v11-all-charsets-500.woff2" />
+    <None Include="x64\NEWS.md" />
+    <None Include="x64\README.md" />
+    <None Include="x64\searchindex.json" />
+    <None Include="x86\conf_examples\clamd.conf.sample" />
+    <None Include="x86\conf_examples\freshclam.conf.sample" />
+    <None Include="x86\COPYING\COPYING" />
+    <None Include="x86\COPYING\COPYING.bzip2" />
+    <None Include="x86\COPYING\COPYING.file" />
+    <None Include="x86\COPYING\COPYING.getopt" />
+    <None Include="x86\COPYING\COPYING.LGPL" />
+    <None Include="x86\COPYING\COPYING.llvm" />
+    <None Include="x86\COPYING\COPYING.lzma" />
+    <None Include="x86\COPYING\COPYING.pcre" />
+    <None Include="x86\COPYING\COPYING.regex" />
+    <None Include="x86\COPYING\COPYING.unrar" />
+    <None Include="x86\COPYING\COPYING.YARA" />
+    <None Include="x86\COPYING\COPYING.zlib" />
+    <None Include="x86\FontAwesome\fonts\fontawesome-webfont.eot" />
+    <None Include="x86\FontAwesome\fonts\fontawesome-webfont.ttf" />
+    <None Include="x86\FontAwesome\fonts\fontawesome-webfont.woff" />
+    <None Include="x86\FontAwesome\fonts\fontawesome-webfont.woff2" />
+    <None Include="x86\FontAwesome\fonts\FontAwesome.ttf" />
+    <None Include="x86\fonts\open-sans-v17-all-charsets-300.woff2" />
+    <None Include="x86\fonts\open-sans-v17-all-charsets-300italic.woff2" />
+    <None Include="x86\fonts\open-sans-v17-all-charsets-600.woff2" />
+    <None Include="x86\fonts\open-sans-v17-all-charsets-600italic.woff2" />
+    <None Include="x86\fonts\open-sans-v17-all-charsets-700.woff2" />
+    <None Include="x86\fonts\open-sans-v17-all-charsets-700italic.woff2" />
+    <None Include="x86\fonts\open-sans-v17-all-charsets-800.woff2" />
+    <None Include="x86\fonts\open-sans-v17-all-charsets-800italic.woff2" />
+    <None Include="x86\fonts\open-sans-v17-all-charsets-italic.woff2" />
+    <None Include="x86\fonts\open-sans-v17-all-charsets-regular.woff2" />
+    <None Include="x86\fonts\source-code-pro-v11-all-charsets-500.woff2" />
+    <None Include="x86\NEWS.md" />
+    <None Include="x86\README.md" />
+    <None Include="x86\searchindex.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="x64\404.html" />
+    <Content Include="x64\ace.js" />
+    <Content Include="x64\api-ms-win-core-console-l1-1-0.dll" />
+    <Content Include="x64\api-ms-win-core-datetime-l1-1-0.dll" />
+    <Content Include="x64\api-ms-win-core-debug-l1-1-0.dll" />
+    <Content Include="x64\api-ms-win-core-errorhandling-l1-1-0.dll" />
+    <Content Include="x64\api-ms-win-core-file-l1-1-0.dll" />
+    <Content Include="x64\api-ms-win-core-file-l1-2-0.dll" />
+    <Content Include="x64\api-ms-win-core-file-l2-1-0.dll" />
+    <Content Include="x64\api-ms-win-core-handle-l1-1-0.dll" />
+    <Content Include="x64\api-ms-win-core-heap-l1-1-0.dll" />
+    <Content Include="x64\api-ms-win-core-interlocked-l1-1-0.dll" />
+    <Content Include="x64\api-ms-win-core-libraryloader-l1-1-0.dll" />
+    <Content Include="x64\api-ms-win-core-localization-l1-2-0.dll" />
+    <Content Include="x64\api-ms-win-core-memory-l1-1-0.dll" />
+    <Content Include="x64\api-ms-win-core-namedpipe-l1-1-0.dll" />
+    <Content Include="x64\api-ms-win-core-processenvironment-l1-1-0.dll" />
+    <Content Include="x64\api-ms-win-core-processthreads-l1-1-0.dll" />
+    <Content Include="x64\api-ms-win-core-processthreads-l1-1-1.dll" />
+    <Content Include="x64\api-ms-win-core-profile-l1-1-0.dll" />
+    <Content Include="x64\api-ms-win-core-rtlsupport-l1-1-0.dll" />
+    <Content Include="x64\api-ms-win-core-string-l1-1-0.dll" />
+    <Content Include="x64\api-ms-win-core-synch-l1-1-0.dll" />
+    <Content Include="x64\api-ms-win-core-synch-l1-2-0.dll" />
+    <Content Include="x64\api-ms-win-core-sysinfo-l1-1-0.dll" />
+    <Content Include="x64\api-ms-win-core-timezone-l1-1-0.dll" />
+    <Content Include="x64\api-ms-win-core-util-l1-1-0.dll" />
+    <Content Include="x64\api-ms-win-crt-conio-l1-1-0.dll" />
+    <Content Include="x64\api-ms-win-crt-convert-l1-1-0.dll" />
+    <Content Include="x64\api-ms-win-crt-environment-l1-1-0.dll" />
+    <Content Include="x64\api-ms-win-crt-filesystem-l1-1-0.dll" />
+    <Content Include="x64\api-ms-win-crt-heap-l1-1-0.dll" />
+    <Content Include="x64\api-ms-win-crt-locale-l1-1-0.dll" />
+    <Content Include="x64\api-ms-win-crt-math-l1-1-0.dll" />
+    <Content Include="x64\api-ms-win-crt-multibyte-l1-1-0.dll" />
+    <Content Include="x64\api-ms-win-crt-private-l1-1-0.dll" />
+    <Content Include="x64\api-ms-win-crt-process-l1-1-0.dll" />
+    <Content Include="x64\api-ms-win-crt-runtime-l1-1-0.dll" />
+    <Content Include="x64\api-ms-win-crt-stdio-l1-1-0.dll" />
+    <Content Include="x64\api-ms-win-crt-string-l1-1-0.dll" />
+    <Content Include="x64\api-ms-win-crt-time-l1-1-0.dll" />
+    <Content Include="x64\api-ms-win-crt-utility-l1-1-0.dll" />
+    <Content Include="x64\appendix\Appendix.html" />
+    <Content Include="x64\appendix\Authenticode.html" />
+    <Content Include="x64\appendix\CvdPrivateMirror.html" />
+    <Content Include="x64\appendix\FileTypes.html" />
+    <Content Include="x64\appendix\FunctionalityLevels.html" />
+    <Content Include="x64\appendix\Terminology.html" />
+    <Content Include="x64\ayu-highlight.css" />
+    <Content Include="x64\book.js" />
+    <Content Include="x64\checkDynamic.dll" />
+    <Content Include="x64\clambc.exe" />
+    <Content Include="x64\clamconf.exe" />
+    <Content Include="x64\clamd.exe" />
+    <Content Include="x64\clamdscan.exe" />
+    <Content Include="x64\clamdtop.exe" />
+    <Content Include="x64\clamscan.exe" />
+    <Content Include="x64\clamsubmit.exe" />
+    <Content Include="x64\clipboard.min.js" />
+    <Content Include="x64\community_resources\CommunityResources.html" />
+    <Content Include="x64\community_resources\CompileClamAV_AmazonLinux2.txt" />
+    <Content Include="x64\concrt140.dll" />
+    <Content Include="x64\conf_examples\CMakeLists.txt" />
+    <Content Include="x64\css\chrome.css" />
+    <Content Include="x64\css\general.css" />
+    <Content Include="x64\css\print.css" />
+    <Content Include="x64\css\variables.css" />
+    <Content Include="x64\editor.js" />
+    <Content Include="x64\elasticlunr.min.js" />
+    <Content Include="x64\faq\faq-cvd.html" />
+    <Content Include="x64\faq\faq-eol.html" />
+    <Content Include="x64\faq\faq-freshclam.html" />
+    <Content Include="x64\faq\faq-ignore.html" />
+    <Content Include="x64\faq\faq-misc.html" />
+    <Content Include="x64\faq\faq-ml.html" />
+    <Content Include="x64\faq\faq-pua.html" />
+    <Content Include="x64\faq\faq-rust.html" />
+    <Content Include="x64\faq\faq-safebrowsing.html" />
+    <Content Include="x64\faq\faq-scan-alerts.html" />
+    <Content Include="x64\faq\faq-troubleshoot.html" />
+    <Content Include="x64\faq\faq-uninstall.html" />
+    <Content Include="x64\faq\faq-upgrade.html" />
+    <Content Include="x64\faq\faq-whichversion.html" />
+    <Content Include="x64\faq\faq-win32.html" />
+    <Content Include="x64\faq\faq.html" />
+    <Content Include="x64\favicon.png" />
+    <Content Include="x64\FontAwesome\css\font-awesome.css" />
+    <Content Include="x64\FontAwesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="x64\fonts\fonts.css" />
+    <Content Include="x64\fonts\OPEN-SANS-LICENSE.txt" />
+    <Content Include="x64\fonts\SOURCE-CODE-PRO-LICENSE.txt" />
+    <Content Include="x64\freshclam.exe" />
+    <Content Include="x64\highlight.css" />
+    <Content Include="x64\highlight.js" />
+    <Content Include="x64\images\change-fork-name.png" />
+    <Content Include="x64\images\cisco.png" />
+    <Content Include="x64\images\clone-your-fork.png" />
+    <Content Include="x64\images\create-a-fork.png" />
+    <Content Include="x64\images\demon.png" />
+    <Content Include="x64\images\flamegraph.svg" />
+    <Content Include="x64\images\fork-is-behind.png" />
+    <Content Include="x64\images\logo.png" />
+    <Content Include="x64\images\new-git-workflow.png" />
+    <Content Include="x64\images\old-git-workflow.png" />
+    <Content Include="x64\index.html" />
+    <Content Include="x64\Introduction.html" />
+    <Content Include="x64\json-c.dll" />
+    <Content Include="x64\libbz2.dll" />
+    <Content Include="x64\libclamav.dll" />
+    <Content Include="x64\libclamunrar.dll" />
+    <Content Include="x64\libclamunrar_iface.dll" />
+    <Content Include="x64\libcrypto-1_1-x64.dll" />
+    <Content Include="x64\libcurl.dll" />
+    <Content Include="x64\libfreshclam.dll" />
+    <Content Include="x64\libmspack.dll" />
+    <Content Include="x64\libssh2.dll" />
+    <Content Include="x64\libssl-1_1-x64.dll" />
+    <Content Include="x64\libxml2.dll" />
+    <Content Include="x64\manual\Development.html" />
+    <Content Include="x64\manual\Development\build-installer-packages.html" />
+    <Content Include="x64\manual\Development\clamav-git-work-flow.html" />
+    <Content Include="x64\manual\Development\code-coverage.html" />
+    <Content Include="x64\manual\Development\Contribute.html" />
+    <Content Include="x64\manual\Development\development-builds.html" />
+    <Content Include="x64\manual\Development\fuzzing-sanitizers.html" />
+    <Content Include="x64\manual\Development\github-pr-basics.html" />
+    <Content Include="x64\manual\Development\libclamav.html" />
+    <Content Include="x64\manual\Development\performance-profiling.html" />
+    <Content Include="x64\manual\Development\personal-forks.html" />
+    <Content Include="x64\manual\Development\testing-pull-requests.html" />
+    <Content Include="x64\manual\Development\tips-and-tricks.html" />
+    <Content Include="x64\manual\Installing.html" />
+    <Content Include="x64\manual\Installing\Add-clamav-user.html" />
+    <Content Include="x64\manual\Installing\Community-projects.html" />
+    <Content Include="x64\manual\Installing\Docker.html" />
+    <Content Include="x64\manual\Installing\Installing-from-source-Unix-old.html" />
+    <Content Include="x64\manual\Installing\Installing-from-source-Unix.html" />
+    <Content Include="x64\manual\Installing\Installing-from-source-Windows.html" />
+    <Content Include="x64\manual\Installing\Packages.html" />
+    <Content Include="x64\manual\OnAccess.html" />
+    <Content Include="x64\manual\Signatures.html" />
+    <Content Include="x64\manual\Signatures\AllowLists.html" />
+    <Content Include="x64\manual\Signatures\AuthenticodeRules.html" />
+    <Content Include="x64\manual\Signatures\BodySignatureFormat.html" />
+    <Content Include="x64\manual\Signatures\BytecodeSignatures.html" />
+    <Content Include="x64\manual\Signatures\ContainerMetadata.html" />
+    <Content Include="x64\manual\Signatures\DatabaseInfo.html" />
+    <Content Include="x64\manual\Signatures\DynamicConfig.html" />
+    <Content Include="x64\manual\Signatures\EncryptedArchives.html" />
+    <Content Include="x64\manual\Signatures\ExtendedSignatures.html" />
+    <Content Include="x64\manual\Signatures\FileTypeMagic.html" />
+    <Content Include="x64\manual\Signatures\HashSignatures.html" />
+    <Content Include="x64\manual\Signatures\LogicalSignatures.html" />
+    <Content Include="x64\manual\Signatures\PhishSigs.html" />
+    <Content Include="x64\manual\Signatures\SignatureNames.html" />
+    <Content Include="x64\manual\Signatures\YaraRules.html" />
+    <Content Include="x64\manual\Usage.html" />
+    <Content Include="x64\manual\Usage\Configuration.html" />
+    <Content Include="x64\manual\Usage\ReportABug.html" />
+    <Content Include="x64\manual\Usage\Scanning.html" />
+    <Content Include="x64\manual\Usage\Services.html" />
+    <Content Include="x64\manual\Usage\SignatureManagement.html" />
+    <Content Include="x64\mark.min.js" />
+    <Content Include="x64\mode-rust.js" />
+    <Content Include="x64\msvcp140.dll" />
+    <Content Include="x64\nghttp2.dll" />
+    <Content Include="x64\pcre2-8.dll" />
+    <Content Include="x64\pdcurses.dll" />
+    <Content Include="x64\print.html" />
+    <Content Include="x64\pthreadVC2.dll" />
+    <Content Include="x64\searcher.js" />
+    <Content Include="x64\searchindex.js" />
+    <Content Include="x64\sigtool.exe" />
+    <Content Include="x64\theme-dawn.js" />
+    <Content Include="x64\theme-tomorrow_night.js" />
+    <Content Include="x64\tomorrow-night.css" />
+    <Content Include="x64\ucrtbase.dll" />
+    <Content Include="x64\vccorlib140.dll" />
+    <Content Include="x64\vcruntime140.dll" />
+    <Content Include="x64\zlib.dll" />
+    <Content Include="x86\404.html" />
+    <Content Include="x86\ace.js" />
+    <Content Include="x86\api-ms-win-core-console-l1-1-0.dll" />
+    <Content Include="x86\api-ms-win-core-datetime-l1-1-0.dll" />
+    <Content Include="x86\api-ms-win-core-debug-l1-1-0.dll" />
+    <Content Include="x86\api-ms-win-core-errorhandling-l1-1-0.dll" />
+    <Content Include="x86\api-ms-win-core-file-l1-1-0.dll" />
+    <Content Include="x86\api-ms-win-core-file-l1-2-0.dll" />
+    <Content Include="x86\api-ms-win-core-file-l2-1-0.dll" />
+    <Content Include="x86\api-ms-win-core-handle-l1-1-0.dll" />
+    <Content Include="x86\api-ms-win-core-heap-l1-1-0.dll" />
+    <Content Include="x86\api-ms-win-core-interlocked-l1-1-0.dll" />
+    <Content Include="x86\api-ms-win-core-libraryloader-l1-1-0.dll" />
+    <Content Include="x86\api-ms-win-core-localization-l1-2-0.dll" />
+    <Content Include="x86\api-ms-win-core-memory-l1-1-0.dll" />
+    <Content Include="x86\api-ms-win-core-namedpipe-l1-1-0.dll" />
+    <Content Include="x86\api-ms-win-core-processenvironment-l1-1-0.dll" />
+    <Content Include="x86\api-ms-win-core-processthreads-l1-1-0.dll" />
+    <Content Include="x86\api-ms-win-core-processthreads-l1-1-1.dll" />
+    <Content Include="x86\api-ms-win-core-profile-l1-1-0.dll" />
+    <Content Include="x86\api-ms-win-core-rtlsupport-l1-1-0.dll" />
+    <Content Include="x86\api-ms-win-core-string-l1-1-0.dll" />
+    <Content Include="x86\api-ms-win-core-synch-l1-1-0.dll" />
+    <Content Include="x86\api-ms-win-core-synch-l1-2-0.dll" />
+    <Content Include="x86\api-ms-win-core-sysinfo-l1-1-0.dll" />
+    <Content Include="x86\api-ms-win-core-timezone-l1-1-0.dll" />
+    <Content Include="x86\api-ms-win-core-util-l1-1-0.dll" />
+    <Content Include="x86\api-ms-win-crt-conio-l1-1-0.dll" />
+    <Content Include="x86\api-ms-win-crt-convert-l1-1-0.dll" />
+    <Content Include="x86\api-ms-win-crt-environment-l1-1-0.dll" />
+    <Content Include="x86\api-ms-win-crt-filesystem-l1-1-0.dll" />
+    <Content Include="x86\api-ms-win-crt-heap-l1-1-0.dll" />
+    <Content Include="x86\api-ms-win-crt-locale-l1-1-0.dll" />
+    <Content Include="x86\api-ms-win-crt-math-l1-1-0.dll" />
+    <Content Include="x86\api-ms-win-crt-multibyte-l1-1-0.dll" />
+    <Content Include="x86\api-ms-win-crt-private-l1-1-0.dll" />
+    <Content Include="x86\api-ms-win-crt-process-l1-1-0.dll" />
+    <Content Include="x86\api-ms-win-crt-runtime-l1-1-0.dll" />
+    <Content Include="x86\api-ms-win-crt-stdio-l1-1-0.dll" />
+    <Content Include="x86\api-ms-win-crt-string-l1-1-0.dll" />
+    <Content Include="x86\api-ms-win-crt-time-l1-1-0.dll" />
+    <Content Include="x86\api-ms-win-crt-utility-l1-1-0.dll" />
+    <Content Include="x86\appendix\Appendix.html" />
+    <Content Include="x86\appendix\Authenticode.html" />
+    <Content Include="x86\appendix\CvdPrivateMirror.html" />
+    <Content Include="x86\appendix\FileTypes.html" />
+    <Content Include="x86\appendix\FunctionalityLevels.html" />
+    <Content Include="x86\appendix\Terminology.html" />
+    <Content Include="x86\ayu-highlight.css" />
+    <Content Include="x86\book.js" />
+    <Content Include="x86\checkDynamic.dll" />
+    <Content Include="x86\clambc.exe" />
+    <Content Include="x86\clamconf.exe" />
+    <Content Include="x86\clamd.exe" />
+    <Content Include="x86\clamdscan.exe" />
+    <Content Include="x86\clamdtop.exe" />
+    <Content Include="x86\clamscan.exe" />
+    <Content Include="x86\clamsubmit.exe" />
+    <Content Include="x86\clipboard.min.js" />
+    <Content Include="x86\community_resources\CommunityResources.html" />
+    <Content Include="x86\community_resources\CompileClamAV_AmazonLinux2.txt" />
+    <Content Include="x86\concrt140.dll" />
+    <Content Include="x86\conf_examples\CMakeLists.txt" />
+    <Content Include="x86\css\chrome.css" />
+    <Content Include="x86\css\general.css" />
+    <Content Include="x86\css\print.css" />
+    <Content Include="x86\css\variables.css" />
+    <Content Include="x86\editor.js" />
+    <Content Include="x86\elasticlunr.min.js" />
+    <Content Include="x86\faq\faq-cvd.html" />
+    <Content Include="x86\faq\faq-eol.html" />
+    <Content Include="x86\faq\faq-freshclam.html" />
+    <Content Include="x86\faq\faq-ignore.html" />
+    <Content Include="x86\faq\faq-misc.html" />
+    <Content Include="x86\faq\faq-ml.html" />
+    <Content Include="x86\faq\faq-pua.html" />
+    <Content Include="x86\faq\faq-rust.html" />
+    <Content Include="x86\faq\faq-safebrowsing.html" />
+    <Content Include="x86\faq\faq-scan-alerts.html" />
+    <Content Include="x86\faq\faq-troubleshoot.html" />
+    <Content Include="x86\faq\faq-uninstall.html" />
+    <Content Include="x86\faq\faq-upgrade.html" />
+    <Content Include="x86\faq\faq-whichversion.html" />
+    <Content Include="x86\faq\faq-win32.html" />
+    <Content Include="x86\faq\faq.html" />
+    <Content Include="x86\favicon.png" />
+    <Content Include="x86\FontAwesome\css\font-awesome.css" />
+    <Content Include="x86\FontAwesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="x86\fonts\fonts.css" />
+    <Content Include="x86\fonts\OPEN-SANS-LICENSE.txt" />
+    <Content Include="x86\fonts\SOURCE-CODE-PRO-LICENSE.txt" />
+    <Content Include="x86\freshclam.exe" />
+    <Content Include="x86\highlight.css" />
+    <Content Include="x86\highlight.js" />
+    <Content Include="x86\images\change-fork-name.png" />
+    <Content Include="x86\images\cisco.png" />
+    <Content Include="x86\images\clone-your-fork.png" />
+    <Content Include="x86\images\create-a-fork.png" />
+    <Content Include="x86\images\demon.png" />
+    <Content Include="x86\images\flamegraph.svg" />
+    <Content Include="x86\images\fork-is-behind.png" />
+    <Content Include="x86\images\logo.png" />
+    <Content Include="x86\images\new-git-workflow.png" />
+    <Content Include="x86\images\old-git-workflow.png" />
+    <Content Include="x86\index.html" />
+    <Content Include="x86\Introduction.html" />
+    <Content Include="x86\json-c.dll" />
+    <Content Include="x86\libbz2.dll" />
+    <Content Include="x86\libclamav.dll" />
+    <Content Include="x86\libclamunrar.dll" />
+    <Content Include="x86\libclamunrar_iface.dll" />
+    <Content Include="x86\libcrypto-1_1.dll" />
+    <Content Include="x86\libcurl.dll" />
+    <Content Include="x86\libfreshclam.dll" />
+    <Content Include="x86\libmspack.dll" />
+    <Content Include="x86\libssh2.dll" />
+    <Content Include="x86\libssl-1_1.dll" />
+    <Content Include="x86\libxml2.dll" />
+    <Content Include="x86\manual\Development.html" />
+    <Content Include="x86\manual\Development\build-installer-packages.html" />
+    <Content Include="x86\manual\Development\clamav-git-work-flow.html" />
+    <Content Include="x86\manual\Development\code-coverage.html" />
+    <Content Include="x86\manual\Development\Contribute.html" />
+    <Content Include="x86\manual\Development\development-builds.html" />
+    <Content Include="x86\manual\Development\fuzzing-sanitizers.html" />
+    <Content Include="x86\manual\Development\github-pr-basics.html" />
+    <Content Include="x86\manual\Development\libclamav.html" />
+    <Content Include="x86\manual\Development\performance-profiling.html" />
+    <Content Include="x86\manual\Development\personal-forks.html" />
+    <Content Include="x86\manual\Development\testing-pull-requests.html" />
+    <Content Include="x86\manual\Development\tips-and-tricks.html" />
+    <Content Include="x86\manual\Installing.html" />
+    <Content Include="x86\manual\Installing\Add-clamav-user.html" />
+    <Content Include="x86\manual\Installing\Community-projects.html" />
+    <Content Include="x86\manual\Installing\Docker.html" />
+    <Content Include="x86\manual\Installing\Installing-from-source-Unix-old.html" />
+    <Content Include="x86\manual\Installing\Installing-from-source-Unix.html" />
+    <Content Include="x86\manual\Installing\Installing-from-source-Windows.html" />
+    <Content Include="x86\manual\Installing\Packages.html" />
+    <Content Include="x86\manual\OnAccess.html" />
+    <Content Include="x86\manual\Signatures.html" />
+    <Content Include="x86\manual\Signatures\AllowLists.html" />
+    <Content Include="x86\manual\Signatures\AuthenticodeRules.html" />
+    <Content Include="x86\manual\Signatures\BodySignatureFormat.html" />
+    <Content Include="x86\manual\Signatures\BytecodeSignatures.html" />
+    <Content Include="x86\manual\Signatures\ContainerMetadata.html" />
+    <Content Include="x86\manual\Signatures\DatabaseInfo.html" />
+    <Content Include="x86\manual\Signatures\DynamicConfig.html" />
+    <Content Include="x86\manual\Signatures\EncryptedArchives.html" />
+    <Content Include="x86\manual\Signatures\ExtendedSignatures.html" />
+    <Content Include="x86\manual\Signatures\FileTypeMagic.html" />
+    <Content Include="x86\manual\Signatures\HashSignatures.html" />
+    <Content Include="x86\manual\Signatures\LogicalSignatures.html" />
+    <Content Include="x86\manual\Signatures\PhishSigs.html" />
+    <Content Include="x86\manual\Signatures\SignatureNames.html" />
+    <Content Include="x86\manual\Signatures\YaraRules.html" />
+    <Content Include="x86\manual\Usage.html" />
+    <Content Include="x86\manual\Usage\Configuration.html" />
+    <Content Include="x86\manual\Usage\ReportABug.html" />
+    <Content Include="x86\manual\Usage\Scanning.html" />
+    <Content Include="x86\manual\Usage\Services.html" />
+    <Content Include="x86\manual\Usage\SignatureManagement.html" />
+    <Content Include="x86\mark.min.js" />
+    <Content Include="x86\mode-rust.js" />
+    <Content Include="x86\msvcp140.dll" />
+    <Content Include="x86\nghttp2.dll" />
+    <Content Include="x86\pcre2-8.dll" />
+    <Content Include="x86\pdcurses.dll" />
+    <Content Include="x86\print.html" />
+    <Content Include="x86\pthreadVC2.dll" />
+    <Content Include="x86\searcher.js" />
+    <Content Include="x86\searchindex.js" />
+    <Content Include="x86\sigtool.exe" />
+    <Content Include="x86\theme-dawn.js" />
+    <Content Include="x86\theme-tomorrow_night.js" />
+    <Content Include="x86\tomorrow-night.css" />
+    <Content Include="x86\ucrtbase.dll" />
+    <Content Include="x86\vccorlib140.dll" />
+    <Content Include="x86\vcruntime140.dll" />
+    <Content Include="x86\zlib.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="x64\database\" />
+    <Folder Include="x86\database\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>mkdir $(TargetDir)ClamAV\database
+md $(TargetDir)ClamAV\database
+mkdir $(TargetDir)ClamAV\x64
+mkdir $(TargetDir)ClamAV\x86
+md $(TargetDir)ClamAV\x64
+md $(TargetDir)ClamAV\x86
+copy $(ProjectDir)x64\*.* $(TargetDir)ClamAV\x64\
+copy $(ProjectDir)x86\*.* $(TargetDir)ClamAV\x86\</PreBuildEvent>
+  </PropertyGroup>
+</Project>
